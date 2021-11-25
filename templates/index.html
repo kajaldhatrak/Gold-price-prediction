@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ml</title>
+    <link rel="stylesheet" href="../static/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&family=Roboto:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login">
+        <h1>Predicting Gold prices</h1>
+
+
+        <h3>Enter following details:</h3>
+        <form action="{{url_for('predict')}}" method="post">
+            <input type="number" step=0.01 name="spx" placeholder="Enter SPX" required="required"> <br>
+            <input type="number" step=0.01 name="uso" placeholder="Enter USO" required="required"> <br>
+            <input type="number" step=0.01 name="slv" placeholder="Enter SLV" required="required"> <br>
+            <input type="number" step=0.01 name="usd" placeholder="Enter EUR/USD" required="required"> <br>
+            <button>Predict</button>
+        </form>
+        <div class="op">
+            {{ prediction_text }}
+        </div>
+       
+        
+    </div>
+
+</body>
+</html>
